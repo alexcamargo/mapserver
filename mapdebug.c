@@ -175,7 +175,7 @@ int msSetErrorFile(const char *pszErrorFile, const char *pszRelToPath)
   } else {
     debuginfo->fp = fopen(pszErrorFile, "a");
     if (debuginfo->fp == NULL) {
-      msSetError(MS_MISCERR, "Failed to open MS_ERRORFILE %s, errno %s", "msSetErrorFile()", pszErrorFile, errno);
+      msSetError(MS_MISCERR, "Failed to open MS_ERRORFILE %s, errno %d", "msSetErrorFile()", pszErrorFile, errno);
       return MS_FAILURE;
     }
     debuginfo->errorfile = msStrdup(pszErrorFile);
