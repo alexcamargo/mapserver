@@ -157,7 +157,7 @@ int msSetErrorFile(const char *pszErrorFile, const char *pszRelToPath)
 
   if (strcmp(pszErrorFile, "stderr") == 0) {
     debuginfo->fp = stderr;
-    debuginfo->errorfile = msSrtdup(pszErrorFile);
+    debuginfo->errorfile = msStrdup(pszErrorFile);
     debuginfo->debug_mode = MS_DEBUGMODE_STDERR;
   } else if (strcmp(pszErrorFile, "stdout") == 0) {
     debuginfo->fp = stdout;
